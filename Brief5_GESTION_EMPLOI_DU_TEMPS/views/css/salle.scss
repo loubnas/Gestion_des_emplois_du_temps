@@ -1,0 +1,97 @@
+
+$color:rgb(255, 255, 255);
+$color1:#1565c0;
+$color2:#b92b27;
+$color3:linear-gradient(to right, #b92b27, #1565c0);
+$color4:#7cade6;
+$color5:#f34b46;
+$color6:#191919;
+ 
+body {
+	height: 100%;
+	display: grid;
+	background: $color3;
+	font-family: sans-serif;
+	
+.nav-item{
+	margin-left: 5%;
+}
+
+h1{
+	color:white;
+}
+.mt-100 {
+	margin-top: 100px;
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	padding: 20px;
+	background-color: $color6;
+	background-clip: border-box;
+	border-radius: 6px;
+
+}
+
+.btn-primary {
+	background-color:$color1;
+	border-color: $color1;
+}
+
+
+
+.btn-danger:hover{
+    background-color: $color5;
+	border-color: $color5;
+	color:white;
+}
+
+.btn-info:hover{
+background-color: $color4;
+border-color: $color4;
+color:white;
+}
+//-------------
+label {
+	font-weight: 800;
+	color:white;
+}
+.text-center{
+	color:white;
+}
+tr,td{
+	color:white;
+}
+//------------
+.btn1{
+	margin-top:16%;
+	background-color: $color1;
+}
+.btn2{
+	margin-top:16%;
+	margin-left:-68%;
+	width:182px;
+}
+.table{
+	background-color:$color6;
+}
+.form-control{
+	border-color: $color1;
+	border: 2px solid;
+}
+.colbtn{
+	background-color: $color1;
+	color: white;
+}
+.COLBTN{
+	background-color: $color2;
+	color: white;
+}
+
+
+
+
+}
