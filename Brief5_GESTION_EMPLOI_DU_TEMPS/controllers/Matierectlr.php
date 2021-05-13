@@ -5,12 +5,15 @@ class Matierectlr{
 
 function index() {
   if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin']))
-  {
-    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere/read');
+  { 
+    $matiere=new Matiere();
+    $matieres=$matiere->read();
+    require_once __DIR__."/../views/matiere.php";
+
   }else{
     header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
- }  
-}
+     }
+} 
 
 
 //instantiation 'create matiere'
@@ -26,7 +29,7 @@ function create(){
           $matiere->create($_POST['nom'.$i]);
           $i++;
     }
-    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere/read');
+    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere');
   }
     
 }
@@ -36,19 +39,6 @@ function create(){
     }
 }
  
-//instantiation 'affichage matiere'
-function read(){
-  if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin']))
-  {
-    $matiere=new Matiere();
-    $matieres=$matiere->read();
-    require_once __DIR__."/../views/matiere.php";
-
-  }else{
-  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
-}
-}
-
 
 //instantiation 'delete matiere'
 function delete(){
@@ -59,7 +49,7 @@ function delete(){
     $id=$_POST['del'];
     $matiere->delete($id);
   }
-     header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere/read');
+     header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere');
   }
   else{
      header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
@@ -78,7 +68,7 @@ function update(){
     require_once __DIR__."/../views/Managematiere.php";
  }
  else{
-  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere/read');
+  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere');
   }
 }
 else{
@@ -95,7 +85,7 @@ public function saveupdate(){
      $matiere=new Matiere();
      $matiere->saveup($id,$libelle);
     }
-    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere/read');
+    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/matiere');
     }
   else{
   header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');

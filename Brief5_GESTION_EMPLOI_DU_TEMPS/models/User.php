@@ -2,14 +2,11 @@
 require_once 'connexion.php';
 class User
 {
-    private $id;
-    private $name;
-    private $prenom;
     private $email;
     private $password;
-    private $query;
+    // private $query;
 
-   //SELECT user :
+   //SELECT Admin  :
     function read($email,$password){
         $con=new Connexion();
         $conn2=$con->con;

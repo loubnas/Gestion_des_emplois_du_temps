@@ -23,17 +23,35 @@
                 <form  class="box" method="post" action="login/auth">
                     <h1>Login</h1>
                     <p class="text-muted"> Please enter your login and password!</p>
-                     <input type="email" name="email" placeholder="Tapez votre Email" required> 
-                     <input type="password" name="password" required placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"> 
-                      <input type="submit" name="login" value="Login" >
+                    <input type="email" name="email" placeholder="Tapez votre Email" required> 
+                    <input type="password" name="password" required placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"> 
+                    <input type="submit" name="login" value="Login" >
+                  
+                                            <?php
+                                           
+                                            if(isset($_SESSION['erreurLogin'])){
+                                                $erreur = $_SESSION['erreurLogin'];
+                                            }else{
+                                                $erreur = "";
+                                            }
+                                            session_destroy();
+                                            ?>
+
+                                            <?php if(!empty($erreur)){ ?>
+                                            <div class="alert alert-danger">
+                                                <?php echo $erreur; ?>
+                                            </div>
+
+                                            <?php } ?>
+                    <a href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Enseignant/inscription" class="float-end">inscription</a>
+                           
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<?php session_start(); if (isset($_SESSION['erreur'])){ echo "<script>document.addEventListener('DOMContentLoaded', function() {alert('shdgqhg')}, false);</script>"; 
-} ?>
+
 
 </body>
 </html>

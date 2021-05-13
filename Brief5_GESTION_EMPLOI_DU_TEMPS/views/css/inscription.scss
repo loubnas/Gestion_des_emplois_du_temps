@@ -1,0 +1,19 @@
+$color:linear-gradient(to right, #b92b27, #1565c0);
+
+ 
+  body {
+      background: $color;
+
+      img{
+        width: 520PX;
+        height: 391px;
+        margin-top: -111%;
+        margin-left: 122%;
+      }
+  
+      .card{
+        height: 577px;
+      }
+
+}
+

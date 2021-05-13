@@ -15,12 +15,6 @@ body h1 {
   color: white;
 }
 
-body .row {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 body .mt-100 {
   margin-top: 100px;
 }
@@ -35,11 +29,8 @@ body .card {
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 0;
-  margin-left: 15%;
-  margin-right: 15%;
   padding: 20px;
   background-color: #191919;
-  word-wrap: break-word;
   background-clip: border-box;
   border-radius: 6px;
 }
@@ -74,13 +65,9 @@ body tr, body td {
   color: white;
 }
 
-body .btn1 {
-  margin-top: 24%;
-}
-
 body .btn2 {
-  margin-top: 24%;
-  margin-left: -68%;
+  margin-top: 50%;
+  margin-left: 50%;
   width: 182px;
 }
 
@@ -93,13 +80,7 @@ body .form-control {
   border: 2px solid;
 }
 
-body .colbtn {
-  background-color: #1565c0;
-  color: white;
+body .card {
+  margin-top: -5%;
 }
-
-body .COLBTN {
-  background-color: #b92b27;
-  color: white;
-}
-/*# sourceMappingURL=matiere.css.map */
+/*# sourceMappingURL=enseignant.css.map */

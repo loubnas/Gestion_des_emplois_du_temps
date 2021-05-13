@@ -5,11 +5,13 @@ class Groupectlr{
     function index() {
       if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin']))
       {
-        header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe/read');
+        $groupe=new Groupe();
+        $groupes=$groupe->read();
+        require_once __DIR__."/../views/groupe.php";
 
       }else{
-      header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
-       }
+        header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
+         }
     } 
 
 //instantiation 'create groupe'
@@ -28,25 +30,13 @@ function create(){
         $i++;
       }
   
-    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe/read');
+    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe');
   }
 }
  else{
   header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
 
  }
-}
-
-//instantiation 'affichage groupe'
-function read(){
-  if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin']))
-  {
-  $groupe=new Groupe();
-  $groupes=$groupe->read();
-  require_once __DIR__."/../views/groupe.php";
-}else{
-  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
-}
 }
 
 
@@ -59,7 +49,7 @@ function delete(){
     $id=$_POST['del'];
     $groupe->delete($id);
   }
-  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe/read');
+  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe');
   }
   else{
   header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
@@ -76,7 +66,7 @@ function update(){
   require_once __DIR__."/../views/Managegroupe.php";
 }
 else{
-  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe/read');
+  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe');
 }
 }
 else{
@@ -95,7 +85,7 @@ if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin'])){
    $groupe=new Groupe();
    $groupe->saveup($id,$libelle,$effectif);
  }
-header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe/read');
+header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/groupe');
 }
 else{
   header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
@@ -106,4 +96,4 @@ else{
 }
 
 
-    ?>
+?>

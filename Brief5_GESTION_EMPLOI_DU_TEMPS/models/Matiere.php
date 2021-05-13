@@ -4,7 +4,7 @@ require_once 'connexion.php';
 class Matiere {
    private $id;
    private $nom;
-   private $con;
+//    private $con;
    
   
     // INSERTION matiere :
@@ -46,18 +46,6 @@ class Matiere {
     }
 
 
-     // select for matiere :
-
-        public function selectMatiere($id){
-            $con=new Connexion();
-            $conn2=$con->con;
-            
-            $query="SELECT * FROM matiere where IdM=$id";
-            $result = $conn2->prepare($query);
-            $result->execute();
-            return $result->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     //UPDATE matiere :
     public function saveup($id,$nom){
         $con=new Connexion();
@@ -73,6 +61,17 @@ class Matiere {
 
     
    
+     // select for matiere :
+
+        public function selectMatiere($id){
+            $con=new Connexion();
+            $conn2=$con->con;
+            
+            $query="SELECT * FROM matiere where IdM=$id";
+            $result = $conn2->prepare($query);
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
 
  
    

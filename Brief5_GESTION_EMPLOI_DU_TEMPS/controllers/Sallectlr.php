@@ -4,13 +4,16 @@ require_once __DIR__."/../models/Salle.php";
 class Sallectlr{
 
   function index() {
+   
     if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin']))
   {
-    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle/read');
+    $salle=new Salle();
+    $salles=$salle->read();
+    require_once __DIR__."/../views/salle.php";
 
   }else{
      header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
-  }
+      }
   } 
 
 //instantiation 'create salle'
@@ -29,7 +32,7 @@ function create(){
         $i++;
       }
    
-    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle/read');
+    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle');
 
   }
 }
@@ -41,18 +44,6 @@ else{
 
 }
 
-//instantiation 'affichage salle'
-function read(){
-
-  if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin']))
-  {
-  $salle=new Salle();
-  $salles=$salle->read();
-  require_once __DIR__."/../views/salle.php";
-}else{
-  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
-}
-}
 
 
 //instantiation 'delete salle'
@@ -64,7 +55,7 @@ function delete(){
         $id=$_POST['del'];
         $salle->delete($id);
       }  
-      header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle/read');       
+      header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle');       
       }
       else{
       header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
@@ -82,7 +73,7 @@ function update(){
       require_once __DIR__."/../views/Managesalle.php";
     }
     else{
-      header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle/read');
+      header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle');
     }
   }
     else{
@@ -101,11 +92,11 @@ public function saveupdate(){
     $salle=new Salle();
     $salle->saveup($id,$libelle,$capacite);
   }
-  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle/read');
+  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle');
 
 }
   else{
-    header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
+  header('location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login');
   }
    
 }

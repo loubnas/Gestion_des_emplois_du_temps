@@ -5,7 +5,7 @@ class Groupe {
    private $id;
    private $nom;
    private $effectif;
-   private $con;
+//    private $con;
    
    
     // INSERTION groupe :
@@ -44,17 +44,6 @@ class Groupe {
     }
 
     
-    // select for groupe:
-
-    public function selectGroupe($id){
-        $con=new Connexion();
-        $conn2=$con->con;
-        
-        $query="SELECT * FROM groupe where IdG=$id";
-        $result = $conn2->prepare($query);
-        $result->execute();
-        return $result->fetchAll(PDO::FETCH_ASSOC);
-}
 
 //UPDATE groupe :
 public function saveup($id,$nom,$effectif){
@@ -67,6 +56,19 @@ public function saveup($id,$nom,$effectif){
     $query="UPDATE `groupe` SET `LibelleG`='".$this->nom."',`effectifG`=".$this->effectif." WHERE IdG=".$this->id;
     $result = $conn2->prepare($query);
     $result->execute();
+}
+
+
+ // select for groupe:
+
+    public function selectGroupe($id){
+        $con=new Connexion();
+        $conn2=$con->con;
+        
+        $query="SELECT * FROM groupe where IdG=$id";
+        $result = $conn2->prepare($query);
+        $result->execute();
+        return $result->fetchAll(PDO::FETCH_ASSOC);
 }
 
 }

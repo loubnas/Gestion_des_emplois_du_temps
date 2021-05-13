@@ -20,13 +20,13 @@
       <ul class="navbar-nav col-md-8 mx-auto justify-content-center">
       
         <li class="nav-item">
-          <a class="nav-link active" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Salle/read">Salle</a>
+          <a class="nav-link active" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Salle">Salle</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Matiere/read">Matière</a>
+            <a class="nav-link" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Matiere">Matière</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Groupe/read">Groupe</a>
+            <a class="nav-link" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Groupe">Groupe</a>
         </li>
       </div>
     </div>

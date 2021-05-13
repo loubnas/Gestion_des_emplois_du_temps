@@ -18,16 +18,16 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav col-md-8 mx-auto justify-content-center">
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Salle/read">Salle</a>
+          <a class="nav-link " href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Salle">Salle</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Matiere/read">Matière</a>
+            <a class="nav-link" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Matiere">Matière</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Groupe/read">Groupe</a>
+            <a class="nav-link active" href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Groupe">Groupe</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" style="float:left"><?php echo $_SESSION['admin'][0]['EmailUser'] ?></a> 
+            <a class="nav-link" style="float:left"><?php echo $_SESSION['admin'][0]['PrenomUser'] ?></a> 
             <a class="btn btn-primary " href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Login/deconnect">Deconnexion</a>
         </li>
       </div>
@@ -36,7 +36,7 @@
 <!--form-->
     <div class="container mt-100">
         <div class="card">
-        <form action="create" method="POST" id="form"> <div class="row">
+        <form action="groupe/create" method="POST" id="form"> <div class="row">
                 <div class="col-md-4"> 
                     <label>Nom de groupe:</label> 
                     <input type="text" class="form-control"  id="nom" name="nom" required> 
@@ -78,14 +78,14 @@
                     <td><?php echo $g['IdG']?></td>
                     <td><?php echo $g['LibelleG']?></td>
                     <td><?php echo $g['effectifG']?></td>
-                    <td class="text-center" style="display: flex;">
-                        <form action="update" method="post">
+                    <td class="text-center">
+                        <form action="groupe/update" method="post" style="display: inline-block">
                             <input type="hidden" value="<?php echo $g['IdG']?>" name="up" >
                             <button class="btn btn-info colbtn" name="update" ><span class="glyphicon glyphicon-edit" ></span> Modifier</button>
                         </form>
                     &nbsp;
                     &nbsp;
-                    <form action="delete" method="post">
+                    <form action="groupe/delete" method="post" style="display: inline-block">  
                     <input type="hidden" value="<?php echo $g['IdG']?>" name="del">
                     <button  class="btn btn-danger btn-xs COLBTN" name="delete"><span class="glyphicon glyphicon-remove" ></span> Supprimer</button>
                     </form>

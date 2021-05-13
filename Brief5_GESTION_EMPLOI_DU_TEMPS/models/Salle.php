@@ -5,7 +5,7 @@ class Salle {
     private $id;
     private $libelle;
     private $capacite;
-    private $con;
+    // private $con;
 
     // INSERTION Salle :
     public function create($libelle,$capacite){
@@ -42,17 +42,6 @@ class Salle {
         $result->execute();
     }
 
-     // select for salle :
-
-        public function selectSalle($id){
-            $con=new Connexion();
-            $conn2=$con->con;
-            
-            $query="SELECT * FROM salle where IdS=$id";
-            $result = $conn2->prepare($query);
-            $result->execute();
-            return $result->fetchAll(PDO::FETCH_ASSOC);
-    }
 
     //UPDATE salle :
     public function saveup($id,$libelle,$capacite){
@@ -67,6 +56,20 @@ class Salle {
         $result->execute();
     }
    
+
+     // select for salle :
+
+        public function selectSalle($id){
+            $con=new Connexion();
+            $conn2=$con->con;
+            
+            $query="SELECT * FROM salle where IdS=$id";
+            $result = $conn2->prepare($query);
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
       
 }
 ?>

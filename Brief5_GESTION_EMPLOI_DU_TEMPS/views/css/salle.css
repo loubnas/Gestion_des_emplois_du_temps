@@ -1,73 +1,97 @@
 body {
   height: 100%;
+  display: -ms-grid;
   display: grid;
+  background: -webkit-gradient(linear, left top, right top, from(#b92b27), to(#1565c0));
   background: linear-gradient(to right, #b92b27, #1565c0);
   font-family: sans-serif;
 }
+
 body .nav-item {
   margin-left: 5%;
 }
+
 body h1 {
   color: white;
 }
+
 body .mt-100 {
   margin-top: 100px;
 }
+
 body .card {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-width: 0;
   padding: 20px;
   background-color: #191919;
   background-clip: border-box;
   border-radius: 6px;
 }
+
 body .btn-primary {
   background-color: #1565c0;
   border-color: #1565c0;
 }
+
 body .btn-danger:hover {
   background-color: #f34b46;
   border-color: #f34b46;
   color: white;
 }
+
 body .btn-info:hover {
   background-color: #7cade6;
   border-color: #7cade6;
   color: white;
 }
+
 body label {
   font-weight: 800;
   color: white;
 }
+
 body .text-center {
   color: white;
 }
+
 body tr, body td {
   color: white;
 }
+
 body .btn1 {
   margin-top: 16%;
   background-color: #1565c0;
 }
+
 body .btn2 {
   margin-top: 16%;
   margin-left: -68%;
   width: 182px;
 }
+
 body .table {
   background-color: #191919;
 }
+
 body .form-control {
   border-color: #1565c0;
   border: 2px solid;
 }
+
 body .colbtn {
   background-color: #1565c0;
   color: white;
 }
+
 body .COLBTN {
   background-color: #b92b27;
   color: white;
-}/*# sourceMappingURL=salle.css.map */
+}
+/*# sourceMappingURL=salle.css.map */
