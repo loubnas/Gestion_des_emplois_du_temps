@@ -41,7 +41,9 @@
                     <label>Nom de la salle :</label> 
                     <select class="form-select input" name="salle" required>
                     <option></option>
-                    <?php foreach($result as $row){ ?>
+                    <?php 
+                    foreach($result as $row){ 
+                    ?>
                           <option value="<?php  echo $row['IdS']?>"><?php echo $row['LibelleS']?></option>
                                 <?php
                                   } ?>
@@ -53,7 +55,9 @@
                     <label>Nom du groupe :</label> 
                     <select class="form-select input" name="groupe" required>
                     <option></option>
-                    <?php foreach($result1 as $row){ ?>
+                    <?php
+                     foreach($result1 as $row){ 
+                    ?>
                           <option value="<?php  echo $row['IdG']?>"><?php echo $row['LibelleG']?></option>
                                 <?php
                                   } ?>
@@ -140,7 +144,9 @@
                     <label id="<?php echo 'idLibelleG'.$i?>"><?php echo $row['LibelleG']?></label>
                         <select id="<?php echo 'idlG'.$i?>" class="form-select input" name="groupe" required style="display:none">
                             <option></option>
-                                 <?php foreach($result1 as $row1){ ?>
+                                 <?php 
+                                 foreach($result1 as $row1){ 
+                                     ?>
                              <option value="<?php  echo $row1['IdG']?>"><?php echo $row1['LibelleG']?></option>
                                 <?php
                                   } ?>
@@ -151,7 +157,9 @@
                     <label id="<?php echo 'idLibelleS'.$i?>"><?php echo $row['LibelleS']?></label>
                         <select  id="<?php echo 'idLS'.$i?>"class="form-select input" name="salle" required style="display:none">
                             <option></option>
-                                 <?php foreach($result as $row2){ ?>
+                                 <?php
+                                  foreach($result as $row2){ 
+                                      ?>
                              <option value="<?php  echo $row2['IdS']?>"><?php echo $row2['LibelleS']?></option>
                                 <?php
                                   } ?>

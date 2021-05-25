@@ -35,7 +35,9 @@
 <div class="container mt-100">
         <div class="card">
            <form action="saveupdate" method="POST">  <div class="row">
-             <?php foreach ($gl as $row)?>
+             <?php 
+             foreach ($gl as $row)
+             ?>
                 <div class="col-md-4"> 
                     <label>Nom du groupe :</label> 
                     <input type="hidden" name="idupdate"  value="<?php echo $row['IdG'];?>" />

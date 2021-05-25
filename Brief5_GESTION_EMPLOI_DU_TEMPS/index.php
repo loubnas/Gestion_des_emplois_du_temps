@@ -21,7 +21,7 @@ if(isset($parametrs[0]) & !empty($parametrs[0]) )
                 $action=$parametrs[1];
                 if(method_exists($obj,$action))
                 { 
-                    // session_start();
+                    
 
                         $obj->$action();
                     

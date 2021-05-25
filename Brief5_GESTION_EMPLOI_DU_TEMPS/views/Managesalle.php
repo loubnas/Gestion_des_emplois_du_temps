@@ -35,7 +35,9 @@
 <div class="container mt-100">
         <div class="card">
            <form action="saveupdate" method="POST">  <div class="row">
-           <?php foreach ($sl as $row)?>
+           <?php 
+           foreach ($sl as $row)
+           ?>
                 <div class="col-md-4"> 
                     <label>Nom de la salle :</label> 
                     <input type="hidden" name="idupdate"  value="<?php echo $row['IdS'];?>" />

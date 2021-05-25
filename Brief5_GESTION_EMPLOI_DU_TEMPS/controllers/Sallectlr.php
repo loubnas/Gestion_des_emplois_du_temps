@@ -82,6 +82,7 @@ function update(){
   
 }
 
+//instantiation save update salle:
 public function saveupdate(){
   if(isset( $_SESSION['admin']) &&  !empty($_SESSION['admin'])){
     

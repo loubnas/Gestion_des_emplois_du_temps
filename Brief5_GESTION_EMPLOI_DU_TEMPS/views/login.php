@@ -43,6 +43,7 @@
                                             </div>
 
                                             <?php } ?>
+                                            
                     <a href="http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/Enseignant/inscription" class="float-end">inscription</a>
                            
                 </form>

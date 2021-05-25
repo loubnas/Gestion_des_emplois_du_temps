@@ -4,29 +4,21 @@ require_once 'connexion.php';
 class Matiere {
    private $id;
    private $nom;
-//    private $con;
    
-  
     // INSERTION matiere :
     public function create($nom){
         $con=new Connexion();
-        $conn2=$con->con;
+        $conn2=$con->con; //On appel l'attribut con et on recupere sa valeur dans $conn2
         $this->nom=$nom;
-        
-        
         $query="INSERT INTO matiere(LibelleM) VALUES ('".$this->nom."')";
         $result = $conn2->prepare($query);
-       
-        $result->execute();
-        
-        
-   }
+       $result->execute();
+    }
 
    //AFFICHAGE matiere :
     function read(){
         $con=new Connexion();
-        $conn2=$con->con;
-
+        $conn2=$con->con;  
         $query="SELECT * FROM `matiere`";
         $result = $conn2->prepare($query);
         $result->execute();
@@ -38,11 +30,10 @@ class Matiere {
      function delete($id){
        $this->id=$id;
        $con=new Connexion();
-       $conn2=$con->con;
-
-        $query="DELETE FROM matiere WHERE IdM=".$this->id;
-        $result = $conn2->prepare($query);
-        $result->execute();
+       $conn2=$con->con; 
+       $query="DELETE FROM matiere WHERE IdM=".$this->id;
+       $result = $conn2->prepare($query);
+       $result->execute();
     }
 
 
@@ -52,7 +43,6 @@ class Matiere {
         $conn2=$con->con;
         $this->id=$id;
         $this->nom=$nom;
-
         $query="UPDATE `matiere` SET `LibelleM`='".$this->nom."' WHERE IdM=".$this->id;
         $result = $conn2->prepare($query);
         $result->execute();
@@ -65,8 +55,7 @@ class Matiere {
 
         public function selectMatiere($id){
             $con=new Connexion();
-            $conn2=$con->con;
-            
+            $conn2=$con->con;  
             $query="SELECT * FROM matiere where IdM=$id";
             $result = $conn2->prepare($query);
             $result->execute();

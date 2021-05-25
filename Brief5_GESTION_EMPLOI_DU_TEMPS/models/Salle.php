@@ -5,15 +5,13 @@ class Salle {
     private $id;
     private $libelle;
     private $capacite;
-    // private $con;
-
+   
     // INSERTION Salle :
     public function create($libelle,$capacite){
-        $con=new Connexion();
-        $conn2=$con->con;
+        $con=new Connexion(); //istantiation de l'objet $con
+        $conn2=$con->con;    //On appel l'attribut con et on recupere sa valeur dans $conn2
         $this->libelle=$libelle;
         $this->capacite=$capacite;
-
         $query=("INSERT INTO `salle`(`LibelleS`, `CapasiterS`) VALUES ('".$this->libelle."',".$this->capacite.")");
         $result = $conn2->prepare($query);
         $result->execute();
@@ -22,8 +20,7 @@ class Salle {
      //AFFICHAGE salle :
      public function read(){
         $con=new Connexion();
-        $conn2=$con->con;
-        
+        $conn2=$con->con; 
         $query="SELECT * FROM salle";
         $result = $conn2->prepare($query);
         $result->execute();
@@ -33,10 +30,9 @@ class Salle {
 
     //Delete salle :
     public function delete($id){
-        $this->id=$id;
-
         $con=new Connexion();
-        $conn2=$con->con;
+        $conn2=$con->con;   
+        $this->id=$id;
         $query="DELETE FROM salle WHERE IdS=".$this->id;
         $result = $conn2->prepare($query);
         $result->execute();
@@ -46,11 +42,10 @@ class Salle {
     //UPDATE salle :
     public function saveup($id,$libelle,$capacite){
         $con=new Connexion();
-        $conn2=$con->con;
+        $conn2=$con->con;    
         $this->id=$id;
         $this->libelle=$libelle;
         $this->capacite=$capacite;
-
         $query="UPDATE `salle` SET LibelleS='$this->libelle', CapasiterS='$this->capacite' WHERE IdS=$this->id";
         $result = $conn2->prepare($query);
         $result->execute();
@@ -61,8 +56,7 @@ class Salle {
 
         public function selectSalle($id){
             $con=new Connexion();
-            $conn2=$con->con;
-            
+            $conn2=$con->con;     
             $query="SELECT * FROM salle where IdS=$id";
             $result = $conn2->prepare($query);
             $result->execute();

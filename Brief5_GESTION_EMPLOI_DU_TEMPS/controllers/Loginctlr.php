@@ -16,26 +16,44 @@ function auth()
         $email = $_POST['email'];
         $password = $_POST['password'];
         $user=new User();
-        $result = $user->read($email,$password);
+        $result = $user->read($email);
         $enseignant = new Enseignant();
-        $result1=$enseignant->readEnseg($email,$password);
+        $result1=$enseignant->readEnseg($email);
       
-
-    if(!empty($result)){            
-            
+     //admin:
+    if(!empty($result)){   
+        $psadmin=$result[0]['password'];
+        if(password_verify($password,$psadmin)){
         $_SESSION['admin']=$result;
         header("location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/salle");
+        }
+        else{
+            $_SESSION['erreurLogin']="<strong>Erreur!</strong> mot de passe incorrecte !"; 
+            header("location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login");    
+        }
 
         
-    }elseif(!empty($result1)){
-
+    }
+    
+    //enseignant :
+    elseif(!empty($result1)){
+        $ps=$result1[0]['PasswordE'];
+        if(password_verify($password,$ps)){
+      
             $_SESSION['enseignant']=$result1;
             header("location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/enseignant");
-    }else {
+    }
+    else{
+        $_SESSION['erreurLogin']="<strong>Erreur!</strong> mot de passe incorrecte !"; 
+        header("location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login");    
+    }
+}
+else {
       
-            $_SESSION['erreurLogin']="<strong>Erreur!</strong> Login ou mot de passe incorrecte !"; 
+            $_SESSION['erreurLogin']="<strong>Erreur!</strong> Login incorrecte !"; 
             header("location:http://localhost/Brief5_GESTION_EMPLOI_DU_TEMPS/login"); 
-        }
+        
+    }
     }
 }
 

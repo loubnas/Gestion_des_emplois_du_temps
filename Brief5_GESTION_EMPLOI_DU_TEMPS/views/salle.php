@@ -38,25 +38,24 @@
 </nav>
     <div class="container mt-100">
         <div class="card">
-           <form action="salle/create" method="POST" id="form">  <div class="row">
-           
-                <div class="col-md-4"> 
-                    <label>Nom de la salle :</label> 
-                    <input type="text" class="form-control" id="libelle" name="libelle" required > 
-                </div>
-                <div class="col-md-4"> 
-                    <label>Capacité :</label> 
-                    <input type="number" class="form-control" id="capacite" name="capacite"  required> 
-                </div>
-                <div class="col-md-2"> 
-                    <button type="button" class="btn btn-primary btn1"   onclick="addSalle()"> + </button> 
-                </div>
-                <div class="col-md-2"> 
-                    <button  class="btn btn-primary btn2" name="add"> Ajouter </button> 
-                </div>
-          
-            
-            </div>  </form>
+           <form action="salle/create" method="POST" id="form">  
+               <div class="row">
+                   <div class="col-md-4"> 
+                       <label>Nom de la salle :</label> 
+                       <input type="text" class="form-control" id="libelle" name="libelle" required > 
+                   </div>
+                    <div class="col-md-4"> 
+                       <label>Capacité :</label> 
+                       <input type="number" class="form-control" id="capacite" name="capacite"  required> 
+                    </div>
+                    <div class="col-md-2"> 
+                       <button type="button" class="btn btn-primary btn1"   onclick="addSalle()"> + </button> 
+                    </div>
+                    <div class="col-md-2"> 
+                      <button  class="btn btn-primary btn2" name="add"> Ajouter </button> 
+                    </div>
+                </div> 
+            </form>
         </div>
     </div>
 
@@ -83,16 +82,16 @@
                     <td><?php echo $s['LibelleS']?></td>
                     <td><?php echo $s['CapasiterS']?></td>
                     <td class="text-center">
-                    <form action="salle/update" method="post" style="display: inline-block">
+                <form action="salle/update" method="post" style="display: inline-block">
                     <input type="hidden" value="<?php echo $s['IdS']?>" name="up">
                     <button class="btn btn-info colbtn" name="update"><span class="glyphicon glyphicon-edit" ></span> Modifier</button>
-                    </form>
+                </form>
                     &nbsp;
                     &nbsp;
-                    <form action="salle/delete" method="post" style="display: inline-block">
-                    <input type="text" value="<?php echo $s['IdS']?>" name="del" hidden>
+                <form action="salle/delete" method="post" style="display: inline-block">
+                    <input type="hidden" value="<?php echo $s['IdS']?>" name="del">
                     <button  class="btn btn-danger btn-xs COLBTN" name="delete"><span class="glyphicon glyphicon-remove" ></span> Supprimer</button>
-                    </form>
+                </form>
                     </td>
                 </tr>
                 <?php }?>
